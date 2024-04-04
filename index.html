@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+</head>
+
+<body>
+
+  <label for="countyInput">Enter your country:</label>
+  <input type="text" id="countryInput" />
+  <button id="countryButton">Display Country</button>
+  <p id="countryResult"></p>
+
+  <label for="nameInput">Enter a website name:</label>
+  <input type="text" id="nameInput" />
+  <button id="nameButton">Display Heading</button>
+  <p id="nameResult"></p>
+
+  <label for="textInput">Are you a student?</label>
+  <input type="text" id="textInput" />
+  <button id="textButton">Display Response</button>
+  <p id="textResult"></p>
+
+  <label for="numberInput">Enter your age:</label>
+  <input type="number" id="numberInput" />
+  <button id="numberButton">Check Age</button>
+  <p id="numberResult"></p>
+
+  <script>
+    const countryInput = document.getElementById("countryInput")
+    const countryButton = document.getElementById("countryButton")
+    const countryResult = document.getElementById("countryResult")
+
+    countryButton.addEventListener("click", function () {
+      const country = countryInput.value
+      countryResult.textContent = `Your country is: ${country}`
+    })
+
+    const nameInput = document.getElementById("nameInput")
+    const nameButton = document.getElementById("nameButton")
+    const nameResult = document.getElementById("nameResult")
+
+    nameButton.addEventListener("click", function () {
+      const name = nameInput.value
+      nameResult.innerHTML = `<h2>${name}</h2>`
+    })
+
+    const textInput = document.getElementById("textInput")
+    const textButton = document.getElementById("textButton")
+    const textResult = document.getElementById("textResult")
+
+    textButton.addEventListener("click", function () {
+      const text = textInput.value
+
+      if (text === "yes") {
+        textResult.textContent = `You are a student.`
+      } else if (text === "no") {
+        textResult.textContent = `You are not a student.`
+      } else {
+        textResult.textContent = `Invalid response.`
+      }
+
+    })
+
+    const numberInput = document.getElementById("numberInput")
+    const numberButton = document.getElementById("numberButton")
+    const numberResult = document.getElementById("numberResult")
+
+    numberButton.addEventListener("click", function(){
+      const number = numberInput.value
+
+      if(number >= 18){
+        numberResult.textContent = `You are an adult.`
+      } else {
+         numberResult.textContent = `You are a minor.`
+      }
+    })
+
+  </script>
+</body>
+
+</html>
